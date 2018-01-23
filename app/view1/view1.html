@@ -1,1 +1,38 @@
-<p>This is the partial for view 1.</p>
+<h2>Cadastro de Passageiro</h2>
+
+<form name="FormCadastroCliente">
+    <div class="form-group">
+      <label>Nome do Passageiro</label>
+      <input type="text" ng-model="dadosPassageiro.nome" class="form-control" required>
+      <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    </div>
+    <div class="form-group">
+      <label>Data de Nascimento</label>
+      <input type="date" ng-model="dadosPassageiro.nascimento" class="form-control"  required>
+    </div>
+    <div class="form-group">
+      <label>CPF</label>
+      <input type="number" ng-model="dadosPassageiro.cpf" class="form-control"  required>
+    </div>
+    <div class="form-group">
+      <label>Sexo</label>
+      <select ng-model="dadosPassageiro.sexo" required>
+          <option value="" chosen></option>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <div class="fg-line">            
+          <label>testeFiltro</label>
+          <select chosen
+          required 
+          no-results-text="'Nenhum resultado encontrado para'"
+          placeholder-text-multiple="'Selecione uma opção'"
+          ng-model="selected"
+          ng-options="usuario.name for usuario in nomesFamilia">
+        </select>
+        </div>
+      </div>
+    <button type="button" ng-click="enviaForm(FormCadastroCliente)" class="btn btn-primary" ng-disabled="!FormCadastroCliente.$valid">Enviar</button>
+</form> 

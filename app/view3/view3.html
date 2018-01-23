@@ -1,0 +1,18 @@
+<h2>Cadastro de Corrida</h2>
+
+<form name="FormCadastroCorrida">
+    <div class="form-group">
+      <label>Nome do Motorista</label>
+      <input type="text" ng-model="dadosFormCorrida.motorista" class="form-control" required>
+      <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+    </div>
+    <div class="form-group">
+      <label>Nome do Passageiro</label>
+      <input type="text" ng-model="dadosFormCorrida.passageiro" class="form-control"  required>
+    </div>
+    <div class="form-group">
+      <label>Valor da Corrida</label>
+      <input type="text" ng-model="dadosFormCorrida.valor" placeholder="R$" class="form-control"  required>
+    </div>
+    <button type="button" ng-click="enviaForm(FormCadastroCorrida)" class="btn btn-primary" ng-disabled="!FormCadastroCorrida.$valid">Enviar</button>
+</form> 
