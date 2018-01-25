@@ -24,7 +24,7 @@ angular.module('myApp')
     $scope.passageiros = $firebaseArray(ref);
 
     $scope.enviaForm = (form) => {
-        // $scope.derp = new Date($scope.dadosPassageiro.nascimento)
+        $scope.derp = new Date($scope.dadosPassageiro.nascimento)
         $scope.dadosPassageiro.nascimento = $filter('date')($scope.derp, "dd/MM/yyyy");        
         // console.log($scope.dadosPassageiro, "Dados do passageiro")
         $scope.passageiros.$add({
