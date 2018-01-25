@@ -1,6 +1,7 @@
 var myApp = angular.module('myApp', [
   'ui.router',
-  'firebase'
+  'firebase',
+  'ui.utils.masks'
 ]);
 
 myApp.config(function($stateProvider, $urlRouterProvider) {

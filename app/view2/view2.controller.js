@@ -32,7 +32,7 @@ $scope.dadosForm = {};
             modeloCarro: $scope.dadosForm.modeloCarro,
             status: 1
         }).then(() => {
-            $scope.dadosForm = ''
+            $scope.dadosForm = {};
         }) 
     }
 

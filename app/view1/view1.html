@@ -12,7 +12,7 @@
     </div>
     <div class="form-group">
       <label>CPF</label>
-      <input type="number" ng-model="dadosPassageiro.cpf" class="form-control"  required>
+      <input type="text" ng-model="dadosPassageiro.cpf" class="form-control" ui-br-cpf-mask  required>
     </div>
     <div class="form-group">
       <label>Sexo</label>
@@ -25,7 +25,7 @@
     <button type="button" ng-click="enviaForm(FormCadastroCliente)" class="btn btn-primary" ng-disabled="!FormCadastroCliente.$valid">Enviar</button>
 </form>
 
-<table class="table">
+<table class="table" ng-init="teste()">
   <thead>
     <tr>
       <th scope="col">Nome</th>

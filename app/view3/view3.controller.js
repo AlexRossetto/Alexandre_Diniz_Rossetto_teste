@@ -42,7 +42,7 @@ angular.module('myApp')
         nomePassageiro: $scope.dadosFormCorrida.passageiro.nome,
         valorCorrida: $scope.dadosFormCorrida.valor,
     }).then(() => {
-        $scope.dadosFormCorrida = ''
+        $scope.dadosFormCorrida = {};
     }) 
 }
 })

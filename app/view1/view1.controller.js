@@ -21,7 +21,7 @@ angular.module('myApp')
 
     var ref = firebase.database().ref().child("Passageiros");
 
-    $scope.passageiros = $firebaseArray(ref);
+    $scope.passageiros = $firebaseArray(ref)
 
     $scope.enviaForm = (form) => {
         $scope.derp = new Date($scope.dadosPassageiro.nascimento)
@@ -33,24 +33,24 @@ angular.module('myApp')
             cpf: $scope.dadosPassageiro.cpf,
             sexo: $scope.dadosPassageiro.sexo
         }).then(() => {
-            $scope.dadosPassageiro = ''
+            $scope.dadosPassageiro = {};
         }) 
     }
 
-    $scope.nomesFamilia = [
-        {name: 'Flávio Diniz Rossetto Junior', id: 1},
-        {name: 'Carmen Rosa de Castro', id: 2},
-        {name: 'Flavio Diniz Rossetto', id: 3},
-        {name: 'Ana Lucia Ruiz Rossetto', id: 4},
-        {name: 'Silvana Rosa de Castro', id: 5}
-       ];
+    // $scope.nomesFamilia = [
+    //     {name: 'Flávio Diniz Rossetto Junior', id: 1},
+    //     {name: 'Carmen Rosa de Castro', id: 2},
+    //     {name: 'Flavio Diniz Rossetto', id: 3},
+    //     {name: 'Ana Lucia Ruiz Rossetto', id: 4},
+    //     {name: 'Silvana Rosa de Castro', id: 5}
+    //    ];
 
-       $scope.nomesAmigos = [
-        {name: 'Paloma', id: 1},
-        {name: 'Gabriel', id: 2},
-        {name: 'Sarah', id: 3},
-        {name: 'Tcheissa', id: 4},
-        {name: 'Brenno', id: 5}
-       ];
+    //    $scope.nomesAmigos = [
+    //     {name: 'Paloma', id: 1},
+    //     {name: 'Gabriel', id: 2},
+    //     {name: 'Sarah', id: 3},
+    //     {name: 'Tcheissa', id: 4},
+    //     {name: 'Brenno', id: 5}
+    //    ];
 
 });
