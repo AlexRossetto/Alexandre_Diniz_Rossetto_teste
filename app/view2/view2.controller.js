@@ -23,7 +23,7 @@ $scope.dadosForm = {};
     $scope.enviaForm = (form) => {
         $scope.derp = new Date($scope.dadosForm.nascimento)
         $scope.dadosForm.nascimento = $filter('date')($scope.derp, "dd/MM/yyyy");        
-        console.log($scope.dadosForm, "Dados do passageiro")
+        // console.log($scope.dadosForm, "Dados do passageiro")
         $scope.motoristas.$add({
             nome: $scope.dadosForm.nome,
             dataNascimento: $scope.dadosForm.nascimento,
@@ -37,7 +37,7 @@ $scope.dadosForm = {};
     }
 
     $scope.updateStatus = (motorista) => {
-      console.log(motorista, "dados do Motorista")
+      // console.log(motorista, "dados do Motorista")
        var id = motorista.$id
 
       var record = $scope.motoristas.$getRecord(id)

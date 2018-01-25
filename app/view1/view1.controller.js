@@ -3,7 +3,7 @@ angular.module('myApp')
 .controller('View1Ctrl', function($scope, $firebaseArray, $filter) {
     $scope.dadosPassageiro = {};
 
-    console.log($scope.passageiros, "dados dos passageiros")
+    // console.log($scope.passageiros, "dados dos passageiros")
 
     var config = {
         apiKey: "AIzaSyA9WYf-MslurKPSkxSqOOB3cne5KKuDu_s",
@@ -24,9 +24,9 @@ angular.module('myApp')
     $scope.passageiros = $firebaseArray(ref);
 
     $scope.enviaForm = (form) => {
-        $scope.derp = new Date($scope.dadosPassageiro.nascimento)
+        // $scope.derp = new Date($scope.dadosPassageiro.nascimento)
         $scope.dadosPassageiro.nascimento = $filter('date')($scope.derp, "dd/MM/yyyy");        
-        console.log($scope.dadosPassageiro, "Dados do passageiro")
+        // console.log($scope.dadosPassageiro, "Dados do passageiro")
         $scope.passageiros.$add({
             nome: $scope.dadosPassageiro.nome,
             dataNascimento: $scope.dadosPassageiro.nascimento,

@@ -31,10 +31,10 @@ angular.module('myApp')
 
   $scope.passageiros = $firebaseArray(refPass);
   
-  console.log($scope.motoristas)
+  // console.log($scope.motoristas)
 
   $scope.enviaForm = (form) => {      
-    console.log($scope.dadosFormCorrida, "Dados do passageiro")
+    // console.log($scope.dadosFormCorrida, "Dados do passageiro")
     $scope.corridas.$add({
         idMotorista: $scope.dadosFormCorrida.motorista.$id,
         nomeMotorista: $scope.dadosFormCorrida.motorista.nome,
