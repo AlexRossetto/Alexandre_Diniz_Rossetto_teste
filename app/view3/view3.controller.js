@@ -31,7 +31,7 @@ angular.module('myApp')
 
   $scope.passageiros = $firebaseArray(refPass);
   
-  console.log($scope.corridas)
+  // console.log($scope.corridas)
 
   $scope.enviaForm = (form) => {      
     // console.log($scope.dadosFormCorrida, "Dados da corrida")
