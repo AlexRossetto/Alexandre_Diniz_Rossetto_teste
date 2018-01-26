@@ -1,6 +1,6 @@
 angular.module('myApp')
 
-.controller('View3Ctrl', function($scope, $firebaseArray) {
+.controller('corridaCtrl', function($scope, $firebaseArray) {
   $scope.dadosFormCorrida = {};
 
   var config = {

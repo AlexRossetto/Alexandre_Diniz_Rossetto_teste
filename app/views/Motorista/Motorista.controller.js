@@ -1,5 +1,5 @@
 angular.module('myApp')
-.controller('View2Ctrl', function($scope, $firebaseArray, $filter) {
+.controller('motoristaCtrl', function($scope, $firebaseArray, $filter) {
 $scope.dadosForm = {};
 
     var config = {

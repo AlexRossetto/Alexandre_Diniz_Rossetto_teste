@@ -1,6 +1,6 @@
 angular.module('myApp')
 
-.controller('View1Ctrl', function($scope, $firebaseArray, $filter) {
+.controller('passageiroCtrl', function($scope, $firebaseArray, $filter) {
     $scope.dadosPassageiro = {};
 
     // console.log($scope.passageiros, "dados dos passageiros")

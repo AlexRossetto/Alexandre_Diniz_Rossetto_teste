@@ -7,28 +7,26 @@ var myApp = angular.module('myApp', [
 
 myApp.config(function($stateProvider, $urlRouterProvider) {
 
-    $urlRouterProvider.otherwise('/Cadastro-Passageiros');
+    $urlRouterProvider.otherwise('/Passageiros');
 
     $stateProvider
 
-        // HOME STATES AND NESTED VIEWS ========================================
-        .state('view1', {
-            url: '/Cadastro-Passageiros',
-            templateUrl: 'view1/view1.html',
-            controller: 'View1Ctrl'
+        .state('Passageiros', {
+            url: '/Passageiros',
+            templateUrl: 'views/Passageiro/Passageiro.view.html',
+            controller: 'passageiroCtrl'
         })
 
-        // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
-        .state('view2', {
-            url: '/Cadastro-Motoristas',
-            templateUrl: 'view2/view2.html',
-            controller: 'View2Ctrl'       
+        .state('Motoristas', {
+            url: '/Motoristas',
+            templateUrl: 'views/Motorista/Motorista.view.html',
+            controller: 'motoristaCtrl'       
         })
 
-        .state('view3', {
-            url:'/Cadastro-Corridas',
-            templateUrl: 'view3/view3.html',
-            controller: 'View3Ctrl'
+        .state('Corridas', {
+            url:'/Corridas',
+            templateUrl: 'views/Corrida/Corrida.view.html',
+            controller: 'corridaCtrl'
         })
 
 });
