@@ -1,43 +1,46 @@
-<h2>Cadastro de Corrida</h2>
-
-<form name="FormCadastroCorrida">
-    <div class="form-group">
-      <label>Nome do Motorista</label>
-      <select ng-if="motoristas.length > 0" ng-model="dadosFormCorrida.motorista" class="form-control" required ng-options="motorista.nome for motorista in motoristas">
-        <option value="">Selecione o Motorista</option>
-      </select>
-      <select ng-if="motoristas.length == 0" ng-model="dadosFormCorrida.motorista" class="form-control" required >
-          <option value="">Nenhum Motorista Disponivel</option>
-        </select>
-    </div>
-    <div class="form-group">
-      <label>Nome do Passageiro</label>
-      <select class="form-control" ng-model="dadosFormCorrida.passageiro" required ng-options="passageiro.nome for passageiro in passageiros">
-          <option value="">Selecione o Passageiro</option>
-        </select>    
-      </div>
-    <div class="form-group">
-      <label>Valor da Corrida</label>
-      <input type="text" ng-model="dadosFormCorrida.valor" placeholder="R$" class="form-control" money-mask money-mask-prepend="R$"  required>
-    </div>
-    <button type="button" ng-click="enviaForm(FormCadastroCorrida)" class="btn btn-primary" ng-disabled="!FormCadastroCorrida.$valid">Enviar</button>
-</form>
-
-<h2>Corridas Cadastrados</h2>
-
-<table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th scope="col">Nome do Motorista</th>
-        <th scope="col">Nome do Passageiro</th>
-        <th scope="col">Valor Total da Corrida</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="corrida in corridas">
-        <td>{{corrida.nomeMotorista}}</td>
-        <td>{{corrida.nomePassageiro}}</td>
-        <td>R${{corrida.valorCorrida}}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container">
+  <h2>Cadastro de Corrida</h2>
+  <div class="form">
+    <form name="FormCadastroCorrida">
+        <div class="form-group">
+          <label>Nome do Motorista</label>
+          <select ng-if="motoristas.length > 0" ng-model="dadosFormCorrida.motorista" class="form-control" required ng-options="motorista.nome for motorista in motoristas">
+            <option value="">Selecione o Motorista</option>
+          </select>
+          <select ng-if="motoristas.length == 0" ng-model="dadosFormCorrida.motorista" class="form-control" required >
+              <option value="">Nenhum Motorista Disponivel</option>
+            </select>
+        </div>
+        <div class="form-group">
+          <label>Nome do Passageiro</label>
+          <select class="form-control" ng-model="dadosFormCorrida.passageiro" ng-options="passageiro.nome for passageiro in passageiros" required>
+              <option value="">Selecione o Passageiro</option>
+            </select>    
+          </div>
+        <div class="form-group">
+          <label>Valor da Corrida</label>
+          <input type="text" ng-model="dadosFormCorrida.valor" placeholder="R$" class="form-control" money-mask money-mask-prepend="R$"  required>
+        </div>
+        <button type="button" ng-click="enviaForm(FormCadastroCorrida)" class="btn btn-primary" ng-disabled="!FormCadastroCorrida.$valid">Enviar</button>
+    </form>
+  </div>
+  <h2>Corridas Cadastradas</h2>
+  <div class="table">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Nome do Motorista</th>
+          <th scope="col">Nome do Passageiro</th>
+          <th scope="col">Valor Total da Corrida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="corrida in corridas">
+          <td>{{corrida.nomeMotorista}}</td>
+          <td>{{corrida.nomePassageiro}}</td>
+          <td>R${{corrida.valorCorrida | number:2}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

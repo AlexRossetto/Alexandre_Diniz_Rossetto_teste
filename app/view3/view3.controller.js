@@ -34,7 +34,7 @@ angular.module('myApp')
   console.log($scope.corridas)
 
   $scope.enviaForm = (form) => {      
-    // console.log($scope.dadosFormCorrida, "Dados do passageiro")
+    // console.log($scope.dadosFormCorrida, "Dados da corrida")
     $scope.corridas.$add({
         idMotorista: $scope.dadosFormCorrida.motorista.$id,
         nomeMotorista: $scope.dadosFormCorrida.motorista.nome,
