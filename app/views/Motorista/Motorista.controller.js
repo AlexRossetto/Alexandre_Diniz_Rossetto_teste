@@ -23,7 +23,6 @@ $scope.dadosForm = {};
     $scope.enviaForm = (form) => {
         $scope.derp = new Date($scope.dadosForm.nascimento)
         $scope.dadosForm.nascimento = $filter('date')($scope.derp, "dd/MM/yyyy");        
-        // console.log($scope.dadosForm, "Dados do passageiro")
         $scope.motoristas.$add({
             nome: $scope.dadosForm.nome,
             dataNascimento: $scope.dadosForm.nascimento,
@@ -36,8 +35,20 @@ $scope.dadosForm = {};
         }) 
     }
 
+    $scope.errorDate = false;
+
+    $scope.today = $filter('date')(new Date(),'yyyy-MM-dd');
+
+    $scope.validate = (date) => {
+      if (date == undefined) {
+        $scope.errorDate = true;
+      } else {
+        $scope.errorDate = false;
+      }
+    }
+    
+
     $scope.updateStatus = (motorista) => {
-      // console.log(motorista, "dados do Motorista")
        var id = motorista.$id
 
       var record = $scope.motoristas.$getRecord(id)

@@ -3,8 +3,6 @@ angular.module('myApp')
 .controller('passageiroCtrl', function($scope, $firebaseArray, $filter) {
     $scope.dadosPassageiro = {};
 
-    // console.log($scope.passageiros, "dados dos passageiros")
-
     var config = {
         apiKey: "AIzaSyA9WYf-MslurKPSkxSqOOB3cne5KKuDu_s",
         authDomain: "teste-web-80f4c.firebaseapp.com",
@@ -17,8 +15,19 @@ angular.module('myApp')
       if (!firebase.apps.length) {
         firebase.initializeApp(config);
     }
-    
 
+    $scope.errorDate = false;
+    
+    $scope.today = $filter('date')(new Date(),'yyyy-MM-dd');
+
+    $scope.validate = (date) => {
+        if (date == undefined) {
+        $scope.errorDate = true;
+        } else {
+        $scope.errorDate = false;
+        }
+    }
+    
     var ref = firebase.database().ref().child("Passageiros");
 
     $scope.passageiros = $firebaseArray(ref)
@@ -26,7 +35,6 @@ angular.module('myApp')
     $scope.enviaForm = (form) => {
         $scope.derp = new Date($scope.dadosPassageiro.nascimento)
         $scope.dadosPassageiro.nascimento = $filter('date')($scope.derp, "dd/MM/yyyy");        
-        // console.log($scope.dadosPassageiro, "Dados do passageiro")
         $scope.passageiros.$add({
             nome: $scope.dadosPassageiro.nome,
             dataNascimento: $scope.dadosPassageiro.nascimento,
@@ -36,21 +44,4 @@ angular.module('myApp')
             $scope.dadosPassageiro = {};
         }) 
     }
-
-    // $scope.nomesFamilia = [
-    //     {name: 'Flávio Diniz Rossetto Junior', id: 1},
-    //     {name: 'Carmen Rosa de Castro', id: 2},
-    //     {name: 'Flavio Diniz Rossetto', id: 3},
-    //     {name: 'Ana Lucia Ruiz Rossetto', id: 4},
-    //     {name: 'Silvana Rosa de Castro', id: 5}
-    //    ];
-
-    //    $scope.nomesAmigos = [
-    //     {name: 'Paloma', id: 1},
-    //     {name: 'Gabriel', id: 2},
-    //     {name: 'Sarah', id: 3},
-    //     {name: 'Tcheissa', id: 4},
-    //     {name: 'Brenno', id: 5}
-    //    ];
-
 });
